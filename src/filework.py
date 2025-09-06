@@ -22,13 +22,13 @@ def get_root_path():
     return os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
-def clean_public_and_copy_static():
+def clean_docs_and_copy_static():
     root_path = get_root_path()
-    public_path = os.path.join(root_path, 'public')
+    docs_path = os.path.join(root_path, 'docs')
     static_path = os.path.join(root_path, 'static')
 
-    clear_directory_contents(public_path)
-    shutil.copytree(static_path, public_path, dirs_exist_ok=True)
+    clear_directory_contents(docs_path)
+    shutil.copytree(static_path, docs_path, dirs_exist_ok=True)
 
 
 def get_file_content(from_path):
